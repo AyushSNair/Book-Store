@@ -1,0 +1,1 @@
+get() --> usage app.get() ---> get method is used to get resource from the server
