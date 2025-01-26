@@ -1,1 +1,3 @@
 get() --> usage app.get() ---> get method is used to get resource from the server
+
+res.send() --> usage res.send('Welcome') --> In Express.js, the res.send() method is used to send a response back to the client. It automatically sets the Content-Type header based on the type of data you send and ends the response process.
