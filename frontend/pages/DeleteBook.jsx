@@ -11,7 +11,7 @@ const DeleteBook = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`http://localhost:5555/books/${id}`);
+        const response = await axios.get(`https://localhost:5555/books/${id}`);
         setBook(response.data);
       } catch (err) {
         setError('Error fetching book details. Please try again.');
@@ -22,7 +22,7 @@ const DeleteBook = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5555/books/${id}`);
+      await axios.delete(`https://localhost:5555/books/${id}`);
       navigate('/');
     } catch (err) {
       setError('Error deleting book. Please try again.');

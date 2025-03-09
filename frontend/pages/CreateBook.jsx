@@ -12,7 +12,7 @@ const CreateBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5555/books', {
+      await axios.post('https://localhost:5555/books', {
         title,
         author,
         publishYear,

@@ -11,7 +11,7 @@ const EditBook = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`http://localhost:5555/books/${id}`);
+        const response = await axios.get(`https://localhost:5555/books/${id}`);
         setBook(response.data);
       } catch (err) {
         setError('Error fetching book details. Please try again.');
@@ -23,7 +23,7 @@ const EditBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5555/books/${id}`, book);
+      await axios.put(`https://localhost:5555/books/${id}`, book);
       navigate('/');
     } catch (err) {
       setError('Error updating book. Please try again.');
