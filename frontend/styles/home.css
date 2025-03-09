@@ -1,0 +1,70 @@
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  /* Add Book Button */
+  .add-book-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  
+  .add-book-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  /* Icons */
+  .icon-link {
+    font-size: 20px;
+    margin: 0 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  
+  .icon-link:hover {
+    transform: scale(1.1);
+  }
+  
+  .icon-view { color: blue; }
+  .icon-edit { color: orange; }
+  .icon-delete { color: red; }
+  
