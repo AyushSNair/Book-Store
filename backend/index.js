@@ -1,5 +1,7 @@
 import express from "express";
 import { PORT } from "./config.js";
+import eventRoutes from './routes/eventRoutes.js';
+
 import { MongoUrl } from './config.js';
 import mongoose from 'mongoose';
 import {Book}  from './models/bookModels.js';
@@ -8,10 +10,14 @@ import cors from 'cors';
 const app = express();
 
 app.use(express.json());
-
-//Middleware for handling CORS POLICY
-//Method 1: Allows All Origins with Default of cors(*)
 app.use(cors());
+app.use('/events', eventRoutes);
+
+
+app.use(cors()); 
+
+
+
 
 
 //Option 2: Allow Custom Origins 

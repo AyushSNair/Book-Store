@@ -2,42 +2,42 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-const DeleteBook = () => {
+const DeleteEvent = () => {
   const { id } = useParams();
-  const [book, setBook] = useState({});
+  const [event, setEvent] = useState({});
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchBook = async () => {
+    const fetchEvent = async () => {
       try {
-        const response = await axios.get(`http://localhost:5555/books/${id}`);
-        setBook(response.data);
+        const response = await axios.get(`http://localhost:5555/events/${id}`);
+        setEvent(response.data);
       } catch (err) {
-        setError('Error fetching book details. Please try again.');
+        setError('Error fetching event details. Please try again.');
       }
     };
-    fetchBook();
+    fetchEvent();
   }, [id]);
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5555/books/${id}`);
+      await axios.delete(`http://localhost:5555/events/${id}`);
       navigate('/');
     } catch (err) {
-      setError('Error deleting book. Please try again.');
+      setError('Error deleting event. Please try again.');
     }
   };
 
   return (
     <div>
-      <h1>Delete Book</h1>
+      <h1>Delete Event</h1>
       {error && <p>{error}</p>}
-      <p>Are you sure you want to delete the book titled "{book.title}"?</p>
+      <p>Are you sure you want to delete the event titled "{event.eventName}"?</p>
       <button onClick={handleDelete}>Yes, Delete</button>
       <button onClick={() => navigate('/')}>Cancel</button>
     </div>
   );
 };
 
-export default DeleteBook;
+export default DeleteEvent;
